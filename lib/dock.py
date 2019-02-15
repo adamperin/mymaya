@@ -97,4 +97,3 @@ class MayaMixin(MayaQWidgetDockableMixin, QtWidgets.QWidget):
         self._mainLayout.addWidget(self.mainWidget)
         # Set the title of the mixin widget
         self.setWindowTitle(title)
-        a
