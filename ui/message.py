@@ -93,6 +93,9 @@ class MessageStatusDockManager(dock.DockManager):
                                                 title='Message Status')
 
 class MessageStatusMainWidget(QtWidgets.QWidget):
+    '''
+    test
+    '''
     def __init__(self):
         super(MessageStatusMainWidget, self).__init__()
         layout = QtWidgets.QVBoxLayout()
