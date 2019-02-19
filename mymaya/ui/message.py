@@ -2,8 +2,8 @@
 Example of event driven UIs
 '''
 
-import mymaya.lib.dock as dock
-import mymaya.lib.message as lib_msg
+import mymaya.mymaya.lib.dock as dock
+import mymaya.mymaya.lib.message as lib_msg
 from PySide2 import QtWidgets
 import maya.api.OpenMaya as om2
 
@@ -58,8 +58,8 @@ class MessageListDockManager(dock.DockManager):
         super(MessageListDockManager, self).__init__()
         self.window_name = 'message_list_window'
         self.mixin_cls = lambda: dock.MayaMixin(window_name=self.window_name,
-                                                           main_widget_cls=MessageListMainWidget,
-                                                           title='Message List')
+                                                main_widget_cls=MessageListMainWidget,
+                                                title='Message List')
 
 class MessageListMainWidget(QtWidgets.QWidget):
     def __init__(self):

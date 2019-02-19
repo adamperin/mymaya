@@ -1,5 +1,5 @@
-import mymaya.lib.dock as dock
-from PySide2 import QtGui, QtCore, QtWidgets
+import mymaya.mymaya.lib.dock as dock
+from PySide2 import QtWidgets
 
 def ExampleDock():
     '''
@@ -15,8 +15,8 @@ class DockManager(dock.DockManager):
         super(DockManager, self).__init__()
         self.window_name = 'example_window'
         self.mixin_cls = lambda: dock.MayaMixin(window_name=self.window_name,
-                                                           main_widget_cls=ExampleMainWidget,
-                                                           title='Example Window')
+                                                main_widget_cls=ExampleMainWidget,
+                                                title='Example Window')
 
 class ExampleMainWidget(QtWidgets.QWidget):
     def __init__(self):

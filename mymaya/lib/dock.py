@@ -12,9 +12,6 @@ restored_widgets = []
 
 class DockManager(object):
     def __init__(self):
-        '''
-        Must be overriden per UI.
-        '''
         # Main UI widget class for tool
         self.mixin_cls = None
         # Name used by my to reference UI
