@@ -13,11 +13,19 @@ def messenger():
     '''
     MessengerDockManager.show()
 
-class MessengerDockManager(dock.DockManager):
+def message_list():
     '''
-    overridden
+    Entry point to call ui from maya.
     '''
+    MessageListDockManager.show()
 
+def message_status():
+    '''
+    Entry point to call ui from maya.
+    '''
+    MessageStatusDockManager.show()
+
+class MessengerDockManager(dock.DockManager):
     def __init__(self):
         super(MessengerDockManager, self).__init__()
         self.window_name = 'messenger_window'
@@ -44,16 +52,7 @@ class MessengerMainWidget(QtWidgets.QWidget):
         msg = self.msg_text_edit.toPlainText()
         lib_msg.send_message(msg)
 
-def message_list():
-    '''
-    Entry point to call ui from maya.
-    '''
-    MessageListDockManager.show()
-
 class MessageListDockManager(dock.DockManager):
-    '''
-    overridden
-    '''
     def __init__(self):
         super(MessageListDockManager, self).__init__()
         self.window_name = 'message_list_window'
@@ -74,17 +73,7 @@ class MessageListMainWidget(QtWidgets.QWidget):
     def receive_msg(self, msg):
         self.msg_list.addItem(msg)
 
-def message_status():
-    '''
-    Entry point to call ui from maya.
-    '''
-    MessageStatusDockManager.show()
-
 class MessageStatusDockManager(dock.DockManager):
-    '''
-    overridden
-    '''
-
     def __init__(self):
         super(MessageStatusDockManager, self).__init__()
         self.window_name = 'message_status_window'
